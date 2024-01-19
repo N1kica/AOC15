@@ -1,11 +1,11 @@
 fn part_one() -> i32 {
-    aoc::chars("./data/day16.txt", |c| Some(c))
+    aoc::chars("./data/day1.txt", |c| Some(c))
         .iter()
         .fold(0, |acc, x| acc + step(x))
 }
 
 fn part_two() -> usize {
-    aoc::chars("./data/day16.txt", |c| Some(c))
+    aoc::chars("./data/day1.txt", |c| Some(c))
         .iter()
         .scan(0, |acc, x| Some(std::mem::replace(acc, *acc + step(x))))
         .position(|x| x == -1)
